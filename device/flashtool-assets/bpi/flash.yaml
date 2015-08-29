@@ -1,0 +1,2 @@
+bootloader:
+    - dd if=%s/u-boot-sunxi-with-spl.bin of=%s bs=1024 conv=notrunc seek=8

@@ -1,0 +1,19 @@
+boot_commands=setenv bootargs "console=ttyS0,115200 root=/dev/disk/by-label/system-${snappy_ab} ${snappy_cmdline}"
+
+ramdisk_addr=0x48000000
+kernel_addr=0x47000000
+fdt_addr=0x43000000
+system_txt_addr=0x44000000
+
+kernel_file=vmlinuz
+initrd_file=initrd.img
+fdtfile=sun6i-a31s-bananapi-m2.dtb
+
+loadkernel=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${snappy_ab}/${kernel_file}
+loadinitrd=load mmc ${mmcdev}:${mmcpart} ${initrd_addr} ${snappy_ab}/${initrd_file}; setenv initrd_size ${filesize}
+load_fdt=load mmc ${mmcdev}:${mmcpart} ${fdtaddr} ${snappy_ab}/dtbs/${fdtfile}
+
+snappy_boot_bananapro=if test "${snappy_mode}" = "try"; then if fatload mmc 0 ${snappy_stamp} 0; then if test "${snappy_ab}" = "a"; then setenv snappy_ab "b"; else setenv snappy_ab "a"; fi; fi; fi; run load_initrd load_kernel load_fdt; run boot_commands; bootm ${kernel_addr} ${ramdisk_addr} ${fdt_addr}
+
+uenvcmd=fatload mmc ${partition} ${system_txt_addr} snappy-system.txt; env import -t ${system_txt_addr}; run snappy_boot_bananapro
+autoboot_cmd=${uenvcmd}

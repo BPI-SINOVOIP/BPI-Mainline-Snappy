@@ -1,0 +1,26 @@
+name: bpi-m2
+vendor: Oliver Grawert <ogra@ubuntu.com>
+icon: meta/bpi.png
+version: 0.01
+type: oem
+
+branding:
+    name: Banana Pi M2
+store:
+    oem-key: 123456
+
+config:
+    ubuntu-core:
+        autopilot: false
+
+oem:
+  hardware:
+    platform: sun6i-a31s-bananapi-m2
+    architecture: armhf
+    partition-layout: system-AB
+    bootloader: u-boot
+    boot-assets:
+      files:
+        - path: boot-assets/boot.scr
+        - path: boot-assets/boot.cmd
+        - path: boot-assets/uEnv.txt

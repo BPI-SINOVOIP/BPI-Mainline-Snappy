@@ -1,0 +1,15 @@
+boot_commands=setenv bootargs "console=ttyS0,115200 console=tty1 root=/dev/disk/by-label/system-${snappy_ab} ${snappy_cmdline}"
+
+initrd_addr=0x48000000
+kernel_addr=0x47000000
+fdt_addr=0x43000000
+system_txt_addr=0x44000000
+
+loadkernel=load mmc ${mmcdev}:${mmcpart} ${kernel_addr} ${snappy_ab}/vmlinuz
+loadinitrd=load mmc ${mmcdev}:${mmcpart} ${initrd_addr} ${snappy_ab}/initrd.img; setenv initrd_size ${filesize}
+load_fdt=load mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${snappy_ab}/dtbs/${fdtfile}
+
+snappy_boot_bpi=if test "${snappy_mode}" = "try"; then if fatload mmc 0 ${snappy_stamp} 0; then if test "${snappy_ab}" = "a"; then setenv snappy_ab "b"; else setenv snappy_ab "a"; fi; fi; fi; run load_initrd load_kernel load_fdt; run boot_commands; bootz ${kernel_addr} ${initrd_addr}:${initrd_size} ${fdt_addr}
+
+uenvcmd=fatload mmc ${partition} ${system_txt_addr} snappy-system.txt; env import -t ${system_txt_addr}; run snappy_boot_bpi
+autoboot_cmd=${uenvcmd}
