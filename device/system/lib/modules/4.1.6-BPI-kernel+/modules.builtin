@@ -282,6 +282,7 @@ kernel/drivers/net/ethernet/ti/cpsw_ale.ko
 kernel/drivers/net/ethernet/ti/ti_cpsw.ko
 kernel/drivers/net/ethernet/xilinx/xilinx_emaclite.ko
 kernel/drivers/net/phy/libphy.ko
+kernel/drivers/net/phy/swconfig.ko
 kernel/drivers/net/phy/marvell.ko
 kernel/drivers/net/phy/broadcom.ko
 kernel/drivers/net/phy/icplus.ko

@@ -181,7 +181,6 @@ kernel/drivers/scsi/ch.ko
 kernel/drivers/scsi/osd/libosd.ko
 kernel/drivers/scsi/osd/osd.ko
 kernel/drivers/mtd/ofpart.ko
-kernel/drivers/net/phy/swconfig.ko
 kernel/drivers/net/phy/smsc.ko
 kernel/drivers/net/phy/bcm7xxx.ko
 kernel/drivers/net/phy/bcm87xx.ko

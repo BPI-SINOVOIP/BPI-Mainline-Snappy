@@ -78,7 +78,6 @@ alias symbol:ovs_vport_alloc openvswitch
 alias symbol:arpt_do_table arp_tables
 alias symbol:async_tx_submit async_tx
 alias symbol:unregister_atmdevice_notifier atm
-alias symbol:register_switch swconfig
 alias symbol:capilib_data_b3_req kernelcapi
 alias symbol:team_modeop_port_change_dev_addr team
 alias symbol:hostap_check_sta_fw_version hostap
@@ -2742,7 +2741,6 @@ alias symbol:bcma_core_enable bcma
 alias symbol:comedi_request_region comedi
 alias symbol:ipv6_fixup_options ipv6
 alias symbol:dvb_usbv2_generic_write dvb_usb_v2
-alias symbol:unregister_switch swconfig
 alias symbol:osd_req_list_partition_collections libosd
 alias symbol:vb2_streamoff videobuf2_core
 alias symbol:ath9k_cmn_setup_ht_cap ath9k_common

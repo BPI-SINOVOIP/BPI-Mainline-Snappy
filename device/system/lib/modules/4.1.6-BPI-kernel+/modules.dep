@@ -181,15 +181,14 @@ kernel/drivers/scsi/ch.ko:
 kernel/drivers/scsi/osd/libosd.ko:
 kernel/drivers/scsi/osd/osd.ko: kernel/drivers/scsi/osd/libosd.ko
 kernel/drivers/mtd/ofpart.ko:
-kernel/drivers/net/phy/swconfig.ko:
 kernel/drivers/net/phy/smsc.ko:
 kernel/drivers/net/phy/bcm7xxx.ko:
 kernel/drivers/net/phy/bcm87xx.ko:
 kernel/drivers/net/phy/realtek.ko:
-kernel/drivers/net/phy/b53/b53_common.ko: kernel/drivers/net/phy/swconfig.ko
-kernel/drivers/net/phy/b53/b53_srab.ko: kernel/drivers/net/phy/b53/b53_common.ko kernel/drivers/net/phy/swconfig.ko
-kernel/drivers/net/phy/b53/b53_mdio.ko: kernel/drivers/net/phy/b53/b53_common.ko kernel/drivers/net/phy/swconfig.ko
-kernel/drivers/net/phy/b53/b53_spi.ko: kernel/drivers/net/phy/b53/b53_common.ko kernel/drivers/net/phy/swconfig.ko
+kernel/drivers/net/phy/b53/b53_common.ko:
+kernel/drivers/net/phy/b53/b53_srab.ko: kernel/drivers/net/phy/b53/b53_common.ko
+kernel/drivers/net/phy/b53/b53_mdio.ko: kernel/drivers/net/phy/b53/b53_common.ko
+kernel/drivers/net/phy/b53/b53_spi.ko: kernel/drivers/net/phy/b53/b53_common.ko
 kernel/drivers/net/phy/spi_ks8995.ko:
 kernel/drivers/net/phy/mdio-bcm-unimac.ko:
 kernel/drivers/net/hamradio/mkiss.ko: kernel/net/ax25/ax25.ko
