@@ -1,11 +1,11 @@
-name: bpi-m2
+name: bananapi
 vendor: BPI <BPI-Sinovoip>
 icon: meta/bpi.png
-version: 0.01
+version: 0.2
 type: oem
 
 branding:
-    name: BPI-M2
+    name: bananapi
 store:
     oem-key: 123456
 
